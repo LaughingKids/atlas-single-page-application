@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: laughingwang
@@ -13,40 +12,23 @@ class RestApiEndpoint
 {
     const BASE_ENDPOINT = '/api';
     /* new endpoint */
-    private $endpoint;
-
     protected $method;
 
-    private $validRequest = false;
-
-    public function setRequestValidation($valid=false) {
-        $this->validRequest = $valid;
-    }
-    public function getRequestValidation(){
-        return $this->validRequest;
-    }
-    public function __construct($endpoints,$allowMethods)
+    public function __construct($allowMethods)
     {
         /* set header values before take response */
-        $this->endpoint = self::BASE_ENDPOINT.$endpoint;
         $headerControlMethods = join($allowMethods,' ');
         header("Access-Control-Allow-Orgin: *");
         header("Access-Control-Allow-Methods: ".$headerControlMethods);
         header("Content-Type: application/json");
         /* check user request method */
         $this->setRequestMethod();
-        if(in_array($this->method,$allowMethods)) {
-            $this->setRequestValidation(true);
-        } else {
+        if(!in_array($this->method,$allowMethods)) {
             $this->_responce(null,405);
             exit();
         }
-        /* check user cookie */
     }
 
-    private function endpointCheck(){
-
-    }
     protected function getQueryParameter($name){
         $queryItems = explode('&',$_SERVER['QUERY_STRING']);
         foreach ($queryItems as $queryItem) {
@@ -57,6 +39,7 @@ class RestApiEndpoint
         }
         return null;
     }
+
     private function setRequestMethod(){
         $this->method = $_SERVER['REQUEST_METHOD'];
         if ($this->method == 'POST' && array_key_exists('HTTP_X_HTTP_METHOD', $_SERVER)) {
@@ -69,6 +52,7 @@ class RestApiEndpoint
             }
         }
     }
+
     protected function _responce($data,$statusCode=200){
         header("HTTP/1.1 " . $statusCode . " " . $this->_getStatus($statusCode));
         echo $data;

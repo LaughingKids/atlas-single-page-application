@@ -10,13 +10,11 @@ require_once 'SourceApiRequest.php';
 require_once 'RestApiEndpoint.php';
 class ProductAPI extends RestApiEndpoint
 {
-    private $endpoint = '/products';
     private $allowMethods = array('GET');
 
     public function __construct()
     {
-        parent::__construct($this->endpoint,$this->allowMethods);
-        $valid = $this->getRequestValidation();
+        parent::__construct($this->allowMethods);
         $data = null;
         switch($this->method){
             case 'GET':
