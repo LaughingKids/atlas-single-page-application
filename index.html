@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- google map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWyGdqRypiKYbEml2MRLEoD2GjVbj75aE"></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <link rel="stylesheet" href="./assets/style.css">
+    </head>
+    <body>
+      <div class="fix-left" id="root">
+        <div id="products">
+          <div class="clear-both"></div>
+        </div>
+        <div class="text-center" id="pages">
+        </div>
+      </div>
+      <div class="fix-right" id="map">
+      </div>
+      <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="product-name-head"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img id="modal-body-image" src=""/>
+              <p id="product-id"></p>
+              <p id="product-number"></p>
+              <p id="product-status"></p>
+              <p id="product-own-org-id"></p>
+              <p id="product-own-org-number"></p>
+              <p id="product-own-org-name"></p>
+              <p id="product-cat-id"></p>
+              <p id="product-address"></p>
+              <p id="product-lacation"></p>
+              <p id="product-score"></p>
+              <p id="product-despcription"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="./assets/project.js"></script>
+    </body>
+</html>

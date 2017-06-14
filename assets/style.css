@@ -1,0 +1,45 @@
+body {
+  font-weight: 300;
+}
+div.fix-left {
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 30px;
+  left:0px;
+  width: 70%;
+  height:100%;
+  top:0px;
+}
+
+div.fix-right {
+  position: fixed !important;
+  right:0px;
+  width: 30%;
+  height:100%;
+  top:0px;
+}
+
+.products-grid {
+  height:280px;
+  margin-bottom: 15px;
+}
+
+.products-grid .product-img{
+  height:200px;
+  width:100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.product-desp p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.product-details {
+  float: right;
+}
