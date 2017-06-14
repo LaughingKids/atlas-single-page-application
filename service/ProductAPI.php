@@ -18,7 +18,13 @@ class ProductAPI extends RestApiEndpoint
         $data = null;
         switch($this->method){
             case 'GET':
-                $data = $this->_getDataViaSourceApi();
+                $input = $this->_getDataViaSourceApi();
+                $data = iconv('UTF-16LE', 'UTF-8', $input);
+                if($this->getQueryParameter('callback')) {
+                    /* deal with jsonp callback function */
+                    $data = $_GET['callback'] . '(' . $data . ')';
+                }
+
                 break;
             default:
                 break;

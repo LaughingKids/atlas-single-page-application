@@ -37,8 +37,8 @@ class SourceApiRequest
     /* Only Allow GET request */
     const ATDW_ALLOWED_ACTION = "get";
 
-    /* Default post per page amount is 10*/
-    const ATDW_PAGE_SIZE = "size=10";
+    /* Default post per page amount is 12*/
+    const ATDW_PAGE_SIZE = "size=12";
 
     /* Default page number parameter */
     const ATDW_PAGE_NUMBER = "pge=";

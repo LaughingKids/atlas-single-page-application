@@ -42,6 +42,7 @@ class RestApiEndpoint
 
     private function setRequestMethod(){
         $this->method = $_SERVER['REQUEST_METHOD'];
+//        echo json_encode($_SERVER['REQUEST_METHOD']); exit();
         if ($this->method == 'POST' && array_key_exists('HTTP_X_HTTP_METHOD', $_SERVER)) {
             if ($_SERVER['HTTP_X_HTTP_METHOD'] == 'DELETE') {
                 $this->method = 'DELETE';
