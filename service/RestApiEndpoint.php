@@ -47,6 +47,16 @@ class RestApiEndpoint
     private function endpointCheck(){
 
     }
+    protected function getQueryParameter($name){
+        $queryItems = explode('&',$_SERVER['QUERY_STRING']);
+        foreach ($queryItems as $queryItem) {
+            $query = explode('=',$queryItem);
+            if($query[0]==$name){
+                return $query[1];
+            }
+        }
+        return null;
+    }
     private function setRequestMethod(){
         $this->method = $_SERVER['REQUEST_METHOD'];
         if ($this->method == 'POST' && array_key_exists('HTTP_X_HTTP_METHOD', $_SERVER)) {
