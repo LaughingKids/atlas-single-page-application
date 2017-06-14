@@ -17,7 +17,7 @@ class ProductAPI extends RestApiEndpoint
     {
         parent::__construct($this->endpoint,$this->allowMethods);
         $valid = $this->getRequestValidation();
-        $data='';
+        $data = null;
         switch($this->method){
             case 'GET':
                 $data = $this->_getDataViaSourceApi();
@@ -27,7 +27,12 @@ class ProductAPI extends RestApiEndpoint
         }
         $this->_responce($data,200);
     }
-    private function _getDataViaSourceApi($pageNumber = 1) {
+
+    private function _getDataViaSourceApi() {
+        $pageNumber = $this->getQueryParameter('page');
+        if($pageNumber == null){
+            $pageNumber = 1;
+        }
         $backend_api_request = new SourceApiRequest();
         $responce = $backend_api_request->doGetRequest($pageNumber);
         return $responce;
