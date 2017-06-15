@@ -1,7 +1,7 @@
 ## How to start the rest server
   1. change server.sh to '755'. chmod 755 server.sh
   2. run bash shell. server will be listen on localhost:8080
-  
+  3. open index.html file in web browser.
 ## Rest Api
   1.Available Route
     /api/products
