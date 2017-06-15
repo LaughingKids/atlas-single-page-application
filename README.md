@@ -8,10 +8,8 @@
   2.Allow Method
     GET only
   3.Use query string to change page
-    ?page=1
-  Sample Request
-  http://localhost:8080/api/products/?page=1
-  4.Limit user methods
+  4. Sample Request http://localhost:8080/api/products/?page=1
+  5.Limit user methods
     define allow methods
     limit request routes.
     
@@ -22,16 +20,19 @@
 ## Issues
   1. Fix jquery ajax callback parser error.
   2. change the responce data in UTF-8
+  ```
   $data = iconv('UTF-16LE', 'UTF-8', $input);
     if($this->getQueryParameter('callback')) {
         /* deal with jsonp callback function */
         $data = $_GET['callback'] . '(' . $data . ')';
     }
+  ```
 
 ## Front End
-  use localstorage to keep each page content in the browser
-  pagination has been implemented.
-  Use boostrap CSS framework.And google map API to locate house poistion.
+  1. use localstorage to keep each page content in the browser
+  2. pagination has been implemented.
+  3. Use boostrap CSS framework.
+  4. And google map API to locate house poistion.
 
 ## TODOS
   1. REST Service
